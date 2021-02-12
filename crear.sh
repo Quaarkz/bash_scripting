@@ -7,7 +7,6 @@ touch "$1"
 
 bytes=`wc -c ${1}`
 
-for((i=$bytes;i<$2;i++)); do
-  echo "c" >> $1
+until [ $bytes  -eq ${2:-"1024"} ]; do
+  echo " " >> $1
 done
-
